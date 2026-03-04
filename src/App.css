@@ -11,11 +11,10 @@
   will-change: filter;
   transition: filter 300ms;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
+
+.logo:hover,
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #646cffaa);
 }
 
 @keyframes logo-spin {
@@ -28,7 +27,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+  .logo-spin {
     animation: logo-spin infinite 20s linear;
   }
 }
@@ -39,4 +38,10 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.resume-button {
+  border: 2px solid blue;
+  border-radius: 4px;
+  padding: 6px 12px;
 }
