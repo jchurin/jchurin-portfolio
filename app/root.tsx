@@ -32,8 +32,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
-        {children}
+      <body className="overflow-hidden">
+        <div
+          className="h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth"
+          data-scroll-container
+        >
+          {children}
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>

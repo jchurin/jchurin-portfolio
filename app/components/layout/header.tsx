@@ -5,24 +5,30 @@ export function Header() {
   const [activeSection, setActiveSection] = useState<string | null>("hero");
 
   useEffect(() => {
+    const scrollContainer = document.querySelector("[data-scroll-container]");
+    if (!scrollContainer) return;
+
     const sectionIds = headerData.links.map((link) =>
       link.href.replace("#", "")
     );
 
     const updateActiveSection = () => {
-      const scrollY = window.scrollY + 200; // Offset: header height + trigger zone
+      const triggerZone = 200; // Header height + offset
 
       let current = sectionIds[0];
       for (const id of sectionIds) {
         const el = document.getElementById(id);
-        if (el && el.offsetTop <= scrollY) current = id;
+        if (el && el.getBoundingClientRect().top <= triggerZone) current = id;
       }
       setActiveSection(current);
     };
 
     updateActiveSection();
-    window.addEventListener("scroll", updateActiveSection, { passive: true });
-    return () => window.removeEventListener("scroll", updateActiveSection);
+    scrollContainer.addEventListener("scroll", updateActiveSection, {
+      passive: true,
+    });
+    return () =>
+      scrollContainer.removeEventListener("scroll", updateActiveSection);
   }, []);
 
   return (

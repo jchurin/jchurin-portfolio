@@ -4,7 +4,7 @@ export function About() {
   const { title, bio, highlights } = aboutData;
 
   return (
-    <section id="about" className="min-h-screen flex flex-col justify-center py-section">
+    <section id="about" className="min-h-screen flex flex-col justify-center py-section snap-start">
       <div className="max-w-3xl mx-auto px-4">
         <h2 className="font-serif text-3xl sm:text-4xl font-normal text-foreground mb-8">
           {title}

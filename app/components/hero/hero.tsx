@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col justify-between py-section overflow-hidden"
+      className="min-h-screen flex flex-col justify-between py-section overflow-hidden snap-start"
       style={{
         background:
           "radial-gradient(circle at 50% 50%, color-mix(in oklch, var(--theme-primary) 15%, transparent) 0%, transparent 70%)",
