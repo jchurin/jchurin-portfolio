@@ -1,0 +1,12 @@
+{
+  "title": "About",
+  "bio": [
+    "I'm Juan, a frontend engineer with a focus on building interfaces that are fast, accessible, and enjoyable to use. I care about the details—from how a button feels when you click it to how the app behaves when the network is slow.",
+    "When I'm not coding, I'm usually exploring new tools, reading about design systems, or thinking about how to make the web a better place for everyone."
+  ],
+  "highlights": [
+    "Accessibility-first approach",
+    "Performance & UX obsessed",
+    "Clean, maintainable code"
+  ]
+}

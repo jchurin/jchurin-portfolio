@@ -1,0 +1,31 @@
+{
+  "title": "Projects",
+  "subtitle": "A selection of things I've built",
+  "projects": [
+    {
+      "title": "Project One",
+      "description": "A web application that helps users manage their workflow. Built with React and a modern stack, focusing on performance and a smooth user experience.",
+      "tech": ["React", "TypeScript", "Tailwind CSS"],
+      "links": {
+        "live": "https://example.com",
+        "github": "https://github.com/example"
+      }
+    },
+    {
+      "title": "Project Two",
+      "description": "An internal tool for the team to track metrics and visualize data. Reduced manual reporting time by 60%.",
+      "tech": ["React", "Node.js", "PostgreSQL"],
+      "links": {
+        "github": "https://github.com/example"
+      }
+    },
+    {
+      "title": "Project Three",
+      "description": "A personal side project exploring real-time collaboration. Experimented with WebSockets and conflict-free data structures.",
+      "tech": ["TypeScript", "WebSockets", "Rust"],
+      "links": {
+        "live": "https://example.com"
+      }
+    }
+  ]
+}
