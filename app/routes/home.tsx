@@ -1,13 +1,35 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import {
+  Header,
+  Hero,
+  About,
+  Projects,
+  Experience,
+  Skills,
+  Education,
+  Contact,
+} from "../components";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Portfolio" },
+    { name: "description", content: "My career portfolio and projects" },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <>
+      <Header />
+      <main className="container mx-auto px-4">
+        <Hero />
+        <About />
+        <Projects />
+        <Experience />
+        <Skills />
+        <Education />
+        <Contact />
+      </main>
+    </>
+  );
 }
