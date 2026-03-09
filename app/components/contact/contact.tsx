@@ -1,6 +1,6 @@
 export function Contact() {
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-section">
       {/* Contact content */}
     </section>
   );

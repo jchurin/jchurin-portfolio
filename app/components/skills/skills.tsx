@@ -1,6 +1,6 @@
 export function Skills() {
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-section">
       {/* Skills content */}
     </section>
   );

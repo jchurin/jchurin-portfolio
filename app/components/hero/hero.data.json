@@ -1,0 +1,10 @@
+{
+  "name": "Juan Churin",
+  "title": "Frontend Engineer",
+  "badge": "Frontend engineer",
+  "tagline": "I craft interfaces that feel right. Focused on performance, accessibility, and the details that make products a joy to use.",
+  "cta": {
+    "primary": "View my work",
+    "secondary": "Get in touch"
+  }
+}

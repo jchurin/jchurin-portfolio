@@ -1,6 +1,6 @@
 export function Experience() {
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-section">
       {/* Experience content */}
     </section>
   );
