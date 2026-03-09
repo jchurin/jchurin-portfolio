@@ -1,0 +1,20 @@
+{
+  "title": "Contact",
+  "items": [
+    {
+      "type": "phone",
+      "label": "+54-2613029504",
+      "href": "tel:+542613029504"
+    },
+    {
+      "type": "email",
+      "label": "juanchurin@gmail.com",
+      "href": "mailto:juanchurin@gmail.com"
+    },
+    {
+      "type": "linkedin",
+      "label": "linkedin.com/in/jchurin",
+      "href": "https://linkedin.com/in/jchurin/"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { ExternalLink, Github } from "lucide-react";
 import projectsData from "./projects.data.json";
 
 export function Projects() {
@@ -41,9 +42,10 @@ export function Projects() {
                     href={project.links.live}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm font-medium text-primary hover:underline"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
                   >
-                    View live →
+                    <ExternalLink className="size-4" />
+                    View live
                   </a>
                 )}
                 {project.links?.github && (
@@ -51,9 +53,10 @@ export function Projects() {
                     href={project.links.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm font-medium text-primary hover:underline"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
                   >
-                    Source code →
+                    <Github className="size-4" />
+                    Source code
                   </a>
                 )}
               </div>
