@@ -1,0 +1,72 @@
+{
+  "title": "Experience",
+  "subtitle": "A timeline of my career",
+  "jobs": [
+    {
+      "company": "Airia",
+      "role": "Frontend Engineer",
+      "period": "Nov 2024 - Now",
+      "tech": ["React", "TypeScript", "AI/ML"],
+      "highlights": [
+        "Built scalable React/TypeScript apps for an AI governance platform with data-intensive dashboards and compliance workflows.",
+        "Led frontend architecture: state management, modular components, and TypeScript standards for long-term scalability.",
+        "Collaborated with backend, DevOps, design, and product to deliver high-performance UX integrated with AI services."
+      ]
+    },
+    {
+      "company": "Branch",
+      "role": "Frontend Engineer",
+      "period": "Mar 2023 - Nov 2024",
+      "tech": ["React", "Redux", "MUI", "Emotion", "Sass"],
+      "highlights": [
+        "Developed microfrontends with React and Redux, implementing MUI-based design system.",
+        "Used Emotion, CSS, and Sass for consistent, scalable styling across the app.",
+        "Owned end-to-end delivery: documentation, deployment, unit/integration tests, and code reviews."
+      ]
+    },
+    {
+      "company": "Fanzeem",
+      "role": "Frontend Engineer",
+      "period": "Nov 2021 - Feb 2023",
+      "tech": ["React Native", "MobX", "Expo", "Figma"],
+      "highlights": [
+        "Solely built a mobile app/game with React Native, managing the full frontend lifecycle.",
+        "Used MobX for state management and Expo for streamlined deployment and updates.",
+        "Collaborated with design (Figma) and backend for pixel-perfect UI and seamless integration."
+      ]
+    },
+    {
+      "company": "Leniolabs",
+      "role": "FE Technical Leader",
+      "period": "Jun 2020 - Nov 2021",
+      "tech": ["React", "Redux", "CSS/Sass", "Design Systems"],
+      "highlights": [
+        "Led a team of 8-10 developers in a microfrontend project with React, Redux, and CSS/Sass.",
+        "Maintained and expanded the design system for consistent UI across all microfrontends.",
+        "Managed GitHub workflows, PR reviews, and mentored junior developers."
+      ]
+    },
+    {
+      "company": "Leniolabs",
+      "role": "Frontend Engineer",
+      "period": "Nov 2018 - Jun 2020",
+      "tech": ["React", "Redux", "CSS", "Sass"],
+      "highlights": [
+        "Built microfrontend apps with React and Redux, ensuring seamless integration.",
+        "Implemented and maintained UI elements using the project's design system.",
+        "Wrote unit tests and used CSS/Sass for performant, scalable styling."
+      ]
+    },
+    {
+      "company": "ASF",
+      "role": "Software Developer",
+      "period": "Oct 2015 - Nov 2018",
+      "tech": ["React", "Angular", "Java", "PHP", "Python", "MySQL"],
+      "highlights": [
+        "Developed full-stack web apps with Java, PHP, Python, JavaScript, React, Angular, and jQuery.",
+        "Managed MySQL, SQL Server, and Oracle databases with optimized queries.",
+        "Collaborated with cross-functional teams on backend and frontend for diverse clients."
+      ]
+    }
+  ]
+}
