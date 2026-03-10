@@ -33,5 +33,6 @@ body {
 
 /* Reset transition for transforms and opacity to avoid conflicts */
 *:where(:not(:has(> *))) {
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-property:
+    background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
 }

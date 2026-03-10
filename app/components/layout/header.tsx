@@ -8,9 +8,7 @@ export function Header() {
     const scrollContainer = document.querySelector("[data-scroll-container]");
     if (!scrollContainer) return;
 
-    const sectionIds = headerData.links.map((link) =>
-      link.href.replace("#", "")
-    );
+    const sectionIds = headerData.links.map((link) => link.href.replace("#", ""));
 
     const updateActiveSection = () => {
       const triggerZone = 200; // Header height + offset
@@ -27,22 +25,21 @@ export function Header() {
     scrollContainer.addEventListener("scroll", updateActiveSection, {
       passive: true,
     });
-    return () =>
-      scrollContainer.removeEventListener("scroll", updateActiveSection);
+    return () => scrollContainer.removeEventListener("scroll", updateActiveSection);
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl shadow-sm">
+    <header className="border-border/60 bg-background/70 sticky top-0 z-50 border-b shadow-sm backdrop-blur-xl">
       <nav className="container mx-auto flex items-center justify-between px-4 py-4">
         {/* Logo / Name */}
         <a
           href="#hero"
-          className="font-heading text-foreground hover:text-primary transition-colors text-xl"
+          className="font-heading text-foreground hover:text-primary text-xl transition-colors"
         >
           {headerData.logo}
         </a>
         {/* Section links */}
-        <ul className="flex gap-6 text-muted-foreground text-sm">
+        <ul className="text-muted-foreground flex gap-6 text-sm">
           {headerData.links.map(({ href, label }) => {
             const sectionId = href.replace("#", "");
             const isActive = activeSection === sectionId;
@@ -51,12 +48,13 @@ export function Header() {
               <li key={href}>
                 <a
                   href={href}
-                  className={`relative transition-colors hover:text-foreground ${isActive ? "text-foreground font-medium" : ""
-                    }`}
+                  className={`hover:text-foreground relative transition-colors ${
+                    isActive ? "text-foreground font-medium" : ""
+                  }`}
                 >
                   {label}
                   {isActive && (
-                    <span className="absolute -bottom-[1.15rem] left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
+                    <span className="from-primary to-secondary absolute right-0 -bottom-[1.15rem] left-0 h-0.5 rounded-full bg-gradient-to-r" />
                   )}
                 </a>
               </li>

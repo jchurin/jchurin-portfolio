@@ -1,13 +1,5 @@
 import type { Route } from "./+types/home";
-import {
-  Header,
-  Hero,
-  About,
-  Projects,
-  Experience,
-  Skills,
-  Contact,
-} from "../components";
+import { Header, Hero, About, Projects, Experience, Skills, Contact } from "../components";
 
 export function meta({}: Route.MetaArgs) {
   return [
