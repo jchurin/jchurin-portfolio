@@ -32,14 +32,17 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl shadow-sm">
       <nav className="container mx-auto flex items-center justify-between px-4 py-4">
         {/* Logo / Name */}
-        <a href="#hero" className="font-semibold text-foreground">
+        <a
+          href="#hero"
+          className="font-semibold text-foreground hover:text-primary transition-colors"
+        >
           {headerData.logo}
         </a>
         {/* Section links */}
-        <ul className="flex gap-6 text-muted-foreground">
+        <ul className="flex gap-6 text-muted-foreground text-sm">
           {headerData.links.map(({ href, label }) => {
             const sectionId = href.replace("#", "");
             const isActive = activeSection === sectionId;
@@ -48,11 +51,14 @@ export function Header() {
               <li key={href}>
                 <a
                   href={href}
-                  className={`transition-colors hover:text-foreground ${
+                  className={`relative transition-colors hover:text-foreground ${
                     isActive ? "text-foreground font-medium" : ""
                   }`}
                 >
                   {label}
+                  {isActive && (
+                    <span className="absolute -bottom-[1.15rem] left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
+                  )}
                 </a>
               </li>
             );

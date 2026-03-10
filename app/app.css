@@ -1,10 +1,13 @@
 @import "tailwindcss";
 @import "./theme/theme.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   font-family: var(--font-sans);
-
   background-color: var(--theme-background);
   color: var(--theme-foreground);
 }
@@ -13,4 +16,22 @@ body {
   html {
     color-scheme: dark;
   }
+}
+
+/* Enhanced selection colors */
+::selection {
+  background-color: color-mix(in oklch, var(--theme-primary) 30%, transparent);
+  color: var(--theme-foreground);
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Reset transition for transforms and opacity to avoid conflicts */
+*:where(:not(:has(> *))) {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
 }

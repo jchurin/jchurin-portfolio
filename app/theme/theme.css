@@ -6,35 +6,35 @@
 
 /* Base values - override these for light mode */
 :root {
-  --theme-primary: oklch(0.45 0.2 250);
+  --theme-primary: oklch(0.55 0.25 265);
   --theme-primary-foreground: oklch(0.98 0 0);
-  --theme-secondary: oklch(0.55 0.15 250);
+  --theme-secondary: oklch(0.65 0.2 280);
   --theme-secondary-foreground: oklch(0.98 0 0);
-  --theme-accent: oklch(0.65 0.2 250);
-  --theme-accent-foreground: oklch(0.98 0 0);
-  --theme-background: oklch(0.98 0.005 250);
-  --theme-foreground: oklch(0.2 0.02 250);
-  --theme-muted: oklch(0.94 0.01 250);
-  --theme-muted-foreground: oklch(0.5 0.02 250);
-  --theme-border: oklch(0.9 0.01 250);
-  --theme-ring: oklch(0.45 0.2 250);
+  --theme-accent: oklch(0.75 0.22 320);
+  --theme-accent-foreground: oklch(0.15 0 0);
+  --theme-background: oklch(0.99 0.005 265);
+  --theme-foreground: oklch(0.15 0.02 265);
+  --theme-muted: oklch(0.96 0.01 265);
+  --theme-muted-foreground: oklch(0.45 0.02 265);
+  --theme-border: oklch(0.92 0.015 265);
+  --theme-ring: oklch(0.55 0.25 265);
 }
 
 /* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   :root {
-    --theme-primary: oklch(0.65 0.2 250);
-    --theme-primary-foreground: oklch(0.15 0 0);
-    --theme-secondary: oklch(0.5 0.15 250);
+    --theme-primary: oklch(0.7 0.22 265);
+    --theme-primary-foreground: oklch(0.12 0 0);
+    --theme-secondary: oklch(0.65 0.2 280);
     --theme-secondary-foreground: oklch(0.98 0 0);
-    --theme-accent: oklch(0.55 0.2 250);
-    --theme-accent-foreground: oklch(0.98 0 0);
-    --theme-background: oklch(0.12 0.02 250);
-    --theme-foreground: oklch(0.95 0.01 250);
-    --theme-muted: oklch(0.2 0.02 250);
-    --theme-muted-foreground: oklch(0.65 0.02 250);
-    --theme-border: oklch(0.28 0.02 250);
-    --theme-ring: oklch(0.65 0.2 250);
+    --theme-accent: oklch(0.75 0.22 320);
+    --theme-accent-foreground: oklch(0.15 0 0);
+    --theme-background: oklch(0.11 0.025 265);
+    --theme-foreground: oklch(0.96 0.01 265);
+    --theme-muted: oklch(0.18 0.025 265);
+    --theme-muted-foreground: oklch(0.6 0.02 265);
+    --theme-border: oklch(0.25 0.025 265);
+    --theme-ring: oklch(0.7 0.22 265);
   }
 }
 
