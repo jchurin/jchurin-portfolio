@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import headerData from "./header.data.json";
 import { cn } from "../../utils/cn";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   const [activeSection, setActiveSection] = useState<string | null>("hero");
@@ -72,14 +73,19 @@ export function Header() {
           })}
         </ul>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="text-foreground hover:text-primary md:hidden p-2 transition-colors"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        {/* Theme Toggle + Mobile Menu Button */}
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-foreground hover:text-primary md:hidden p-2 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Navigation Menu */}

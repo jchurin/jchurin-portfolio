@@ -9,6 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import { ThemeProvider } from "./hooks/useTheme";
 
 export const links: Route.LinksFunction = () => [
   { rel: "icon", href: `${import.meta.env.BASE_URL}favicon.ico`, sizes: "32x32" },
@@ -35,12 +36,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="overflow-hidden touch-pan-y">
-        <div
-          className="h-screen snap-y snap-mandatory overflow-y-auto scroll-smooth overscroll-y-contain"
-          data-scroll-container
-        >
-          {children}
-        </div>
+        <ThemeProvider>
+          <div
+            className="h-screen snap-y snap-mandatory overflow-y-auto scroll-smooth overscroll-y-contain"
+            data-scroll-container
+          >
+            {children}
+          </div>
+        </ThemeProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
