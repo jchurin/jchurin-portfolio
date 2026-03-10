@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import headerData from "./header.data.json";
 import { cn } from "../../utils/cn";
 import { ThemeToggle } from "./ThemeToggle";
+import { ResumeDownload } from "./ResumeDownload";
 
 export function Header() {
   const [activeSection, setActiveSection] = useState<string | null>("hero");
@@ -80,8 +81,9 @@ export function Header() {
           })}
         </ul>
 
-        {/* Theme Toggle + Mobile Menu Button */}
+        {/* Resume Download + Theme Toggle + Mobile Menu Button */}
         <div className="flex items-center gap-2">
+          <ResumeDownload />
           <ThemeToggle />
 
           {/* Mobile Menu Button */}

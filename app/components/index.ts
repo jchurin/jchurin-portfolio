@@ -1,5 +1,6 @@
 export { Header } from "./layout/header";
 export { ThemeToggle } from "./layout/ThemeToggle";
+export { ResumeDownload } from "./layout/ResumeDownload";
 export { Hero } from "./hero/hero";
 export { About } from "./about/about";
 export { Projects } from "./projects/projects";

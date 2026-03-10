@@ -90,6 +90,16 @@ All section content lives in `*.data.json` files next to components:
 
 To update content, edit the JSON files rather than modifying component code.
 
+### Resume Management
+
+Resume files are stored in `public/resume/` and versioned numerically (`1.pdf`, `2.pdf`, etc.). The `ResumeDownload` component **automatically detects** the highest numbered file at runtime.
+
+**To update your resume:**
+1. Add new PDF to `public/resume/` with the next number (e.g., `2.pdf`)
+2. Deploy - that's it!
+
+The component uses HEAD requests to check which files exist and downloads the highest version found. No configuration needed.
+
 ### Dynamic Gradients and Animations
 
 **Timeline Gradient Pattern:**
@@ -164,6 +174,41 @@ Keep code clean and self-documenting. Avoid unnecessary comments that explain wh
 - Extract complex logic into well-named helper functions
 - Use TypeScript types to document expected data shapes
 - Only comment WHY, not WHAT (the code already shows what)
+
+### Componentization Principles
+
+**CRITICAL: Always prefer small, focused components over large, monolithic ones.**
+
+**When to extract a component:**
+- ✅ **Self-contained UI element** - Has clear visual boundaries (button, card, modal)
+- ✅ **Reusable logic or markup** - Used in multiple places or could be in the future
+- ✅ **Complex logic** - Has state, effects, or event handlers that are more than 5-10 lines
+- ✅ **Clear single responsibility** - Does one thing well (e.g., ThemeToggle, ResumeDownload)
+- ✅ **Improves readability** - Parent component becomes easier to understand
+- ✅ **Testable in isolation** - Can be tested independently
+
+**Examples from this codebase:**
+- ✅ `ThemeToggle` - Self-contained theme switching button
+- ✅ `ResumeDownload` - Resume detection and download logic
+- ✅ `PaginatedSlider` - Generic reusable pagination component
+- ✅ `TimelineItem` - Complex experience card with gradient logic
+
+**Anti-patterns to avoid:**
+- ❌ Inline complex JSX in parent components (extract to component)
+- ❌ Repeating similar markup (create a shared component)
+- ❌ Components over 200 lines (split into smaller pieces)
+- ❌ Mixing concerns (e.g., data fetching + presentation in one component)
+
+**Component file structure:**
+```
+app/components/
+├── layout/
+│   ├── Header.tsx          # Container component
+│   ├── ThemeToggle.tsx     # Small, focused component
+│   └── ResumeDownload.tsx  # Self-contained feature
+├── common/
+│   └── PaginatedSlider.tsx # Reusable utility component
+```
 
 ### Adding New Sections
 1. Create folder: `app/components/<section>/`
