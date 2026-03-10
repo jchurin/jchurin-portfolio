@@ -10,7 +10,8 @@
     "typecheck": "react-router typegen && tsc",
     "format": "prettier --write \"app/**/*.{ts,tsx,js,jsx,json,css}\"",
     "format:check": "prettier --check \"app/**/*.{ts,tsx,js,jsx,json,css}\"",
-    "predeploy": "npm run build && cp build/client/index.html build/client/404.html",
+    "generate:favicon": "node scripts/generate-favicon.js",
+    "predeploy": "npm run generate:favicon && npm run build && cp build/client/index.html build/client/404.html",
     "deploy": "gh-pages -d build/client"
   },
   "dependencies": {
@@ -33,6 +34,7 @@
     "@types/react-dom": "^19.2.3",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",
