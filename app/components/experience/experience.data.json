@@ -3,7 +3,8 @@
   "subtitle": "A timeline of my career",
   "jobs": [
     {
-      "company": "Airia",
+      "company": "Softwaremind",
+      "client": "Airia",
       "role": "Frontend Engineer",
       "period": "Nov 2024 - Now",
       "tech": ["React", "TypeScript", "AI/ML"],
@@ -14,7 +15,8 @@
       ]
     },
     {
-      "company": "Branch",
+      "company": "Softwaremind",
+      "client": "Branch",
       "role": "Frontend Engineer",
       "period": "Mar 2023 - Nov 2024",
       "tech": ["React", "Redux", "MUI", "Emotion", "Sass"],
@@ -26,6 +28,7 @@
     },
     {
       "company": "Fanzeem",
+      "client": "Fanzeem",
       "role": "Frontend Engineer",
       "period": "Nov 2021 - Feb 2023",
       "tech": ["React Native", "MobX", "Expo", "Figma"],
@@ -37,6 +40,7 @@
     },
     {
       "company": "Leniolabs",
+      "client": "Ellie Mae",
       "role": "FE Technical Leader",
       "period": "Jun 2020 - Nov 2021",
       "tech": ["React", "Redux", "CSS/Sass", "Design Systems"],
@@ -48,6 +52,7 @@
     },
     {
       "company": "Leniolabs",
+      "client": "Ellie Mae",
       "role": "Frontend Engineer",
       "period": "Nov 2018 - Jun 2020",
       "tech": ["React", "Redux", "CSS", "Sass"],
@@ -58,7 +63,8 @@
       ]
     },
     {
-      "company": "ASF",
+      "company": "Aconcagua Software Factory",
+      "client": "Various",
       "role": "Software Developer",
       "period": "Oct 2015 - Nov 2018",
       "tech": ["React", "Angular", "Java", "PHP", "Python", "MySQL"],
