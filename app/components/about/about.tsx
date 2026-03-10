@@ -16,7 +16,7 @@ export function About() {
       </div>
 
       <div className="relative max-w-3xl mx-auto px-4">
-        <h2 className="font-serif text-3xl sm:text-4xl font-normal text-foreground mb-8">
+        <h2 className="font-heading text-3xl sm:text-4xl font-normal text-foreground mb-8">
           {title}
         </h2>
 

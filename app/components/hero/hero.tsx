@@ -47,7 +47,7 @@ export function Hero() {
         </span>
 
         {/* Name - serif for elegance */}
-        <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-foreground tracking-tight mb-4 bg-linear-to-br from-foreground via-foreground to-foreground/70 bg-clip-text">
+        <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-foreground tracking-tight mb-4 bg-linear-to-br from-foreground via-foreground to-foreground/70 bg-clip-text">
           {name}
         </h1>
 

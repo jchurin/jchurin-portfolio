@@ -9,7 +9,7 @@ export function Skills() {
       className="min-h-screen flex flex-col justify-center py-section snap-start"
     >
       <div className="max-w-3xl mx-auto px-4">
-        <h2 className="font-serif text-3xl sm:text-4xl font-normal text-foreground mb-3">
+        <h2 className="font-heading text-3xl sm:text-4xl font-normal text-foreground mb-3">
           {title}
         </h2>
         <p className="text-muted-foreground mb-12 text-lg">

@@ -37,7 +37,7 @@ export function Header() {
         {/* Logo / Name */}
         <a
           href="#hero"
-          className="font-semibold text-foreground hover:text-primary transition-colors"
+          className="font-heading text-foreground hover:text-primary transition-colors text-xl"
         >
           {headerData.logo}
         </a>
@@ -51,9 +51,8 @@ export function Header() {
               <li key={href}>
                 <a
                   href={href}
-                  className={`relative transition-colors hover:text-foreground ${
-                    isActive ? "text-foreground font-medium" : ""
-                  }`}
+                  className={`relative transition-colors hover:text-foreground ${isActive ? "text-foreground font-medium" : ""
+                    }`}
                 >
                   {label}
                   {isActive && (

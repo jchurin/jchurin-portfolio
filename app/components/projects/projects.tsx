@@ -7,7 +7,7 @@ export function Projects() {
   return (
     <section id="projects" className="min-h-screen py-section snap-start">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="font-serif text-3xl sm:text-4xl font-normal text-foreground mb-2">
+        <h2 className="font-heading text-3xl sm:text-4xl font-normal text-foreground mb-2">
           {title}
         </h2>
         <p className="text-muted-foreground mb-12">{subtitle}</p>
@@ -16,7 +16,7 @@ export function Projects() {
           {projects.map((project, i) => (
             <li
               key={i}
-              className="group relative rounded-2xl border border-border/60 bg-linear-to-br from-muted/30 to-muted/10 p-6 sm:p-8"
+              className="group relative rounded-2xl border border-border bg-linear-to-br from-primary/10 to-muted/10 p-6 sm:p-8"
             >
               {/* Subtle gradient overlay on hover */}
               <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-primary/0 to-secondary/0" />

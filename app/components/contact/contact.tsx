@@ -26,7 +26,7 @@ export function Contact() {
       </div>
 
       <div className="relative max-w-3xl mx-auto px-4">
-        <h2 className="font-serif text-3xl sm:text-4xl font-normal mb-4 bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
+        <h2 className="font-heading text-3xl sm:text-4xl font-normal mb-4 bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
           {title}
         </h2>
         <p className="text-muted-foreground mb-12 text-lg">

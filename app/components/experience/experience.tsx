@@ -12,7 +12,7 @@ export function Experience() {
       className="min-h-screen flex flex-col justify-center py-section snap-start"
     >
       <div className="max-w-4xl mx-auto px-4 w-full">
-        <h2 className="font-serif text-3xl sm:text-4xl font-normal text-foreground mb-2 text-center">
+        <h2 className="font-heading text-3xl sm:text-4xl font-normal text-foreground mb-2 text-center">
           {title}
         </h2>
         <p className="text-muted-foreground mb-12 text-center">{subtitle}</p>
@@ -41,7 +41,7 @@ export function Experience() {
 
 
                 {/* Company & Role - Always Visible */}
-                <div className="flex-1 min-w-0 border border-border p-4 rounded-lg bg-primary/5 cursor-pointer hover:bg-primary/10 transition-all duration-300">
+                <div className="flex-1 min-w-0 border border-border p-4 rounded-lg bg-linear-to-br from-primary/10 to-muted/10 cursor-pointer hover:bg-primary/10 transition-all duration-300">
                   <div className="flex flex-col gap-3">
                     <span className="flex flex-row items-center gap-2">
 
