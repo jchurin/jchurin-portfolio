@@ -1,8 +1,29 @@
+import { useState, useEffect } from "react";
 import { ExternalLink, Github as GitHub } from "lucide-react";
 import projectsData from "./projects.data.json";
+import { PaginatedSlider } from "../common/PaginatedSlider";
+
+const ITEMS_PER_PAGE_DESKTOP = 2;
+const ITEMS_PER_PAGE_MOBILE = 1;
 
 export function Projects() {
   const { title, subtitle, projects } = projectsData;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640); // sm breakpoint
+    };
+
+    // Check on mount
+    checkMobile();
+
+    // Add resize listener
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const itemsPerPage = isMobile ? ITEMS_PER_PAGE_MOBILE : ITEMS_PER_PAGE_DESKTOP;
 
   return (
     <section id="projects" className="py-section min-h-screen snap-start flex flex-col justify-center">
@@ -12,8 +33,12 @@ export function Projects() {
         </h2>
         <p className="text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base text-center sm:text-left">{subtitle}</p>
 
-        <ul className="space-y-4 sm:space-y-6">
-          {projects.map((project, i) => (
+        <PaginatedSlider
+          items={projects}
+          itemsPerPage={itemsPerPage}
+          renderPage={(pageProjects) => (
+            <ul className="space-y-4 sm:space-y-6">
+              {pageProjects.map((project, i) => (
             <li
               key={i}
               className="group border-border from-primary/10 to-muted/10 relative overflow-hidden rounded-xl sm:rounded-2xl border bg-linear-to-br"
@@ -79,9 +104,11 @@ export function Projects() {
                   </div>
                 </div>
               </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+              ))}
+            </ul>
+          )}
+        />
       </div>
     </section>
   );
