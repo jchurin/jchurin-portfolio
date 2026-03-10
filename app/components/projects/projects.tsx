@@ -52,7 +52,7 @@ export function Projects() {
                   <div className="md:w-2/5 lg:w-1/3 shrink-0">
                     <div className="relative aspect-video md:aspect-square overflow-hidden rounded-lg sm:rounded-xl border border-border/40 bg-muted/20">
                       <img
-                        src={project.image}
+                        src={import.meta.env.BASE_URL + project.image.slice(1)}
                         alt={project.title}
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
