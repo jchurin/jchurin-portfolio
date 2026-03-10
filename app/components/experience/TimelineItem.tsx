@@ -6,10 +6,11 @@ interface TimelineItemProps extends React.HTMLAttributes<HTMLDivElement> {
     primaryTitle: string;
     secondaryTitle: string;
     subtitle: string;
+    tech?: string[];
+    highlights: string[];
     isHovered: boolean;
     index: number;
     totalItems: number;
-    renderOnHover: () => React.ReactNode;
 }
 
 // Map percentage to nearest Tailwind opacity value
@@ -25,10 +26,11 @@ export const TimelineItem = ({
     primaryTitle,
     secondaryTitle,
     subtitle,
+    tech,
+    highlights,
     isHovered,
     index,
     totalItems,
-    renderOnHover,
     ...props
 }: TimelineItemProps) => {
 
@@ -59,16 +61,15 @@ export const TimelineItem = ({
                 )}
             />
 
-            {/* Company & Role - Always Visible */}
+            {/* Company & Role - Expandable Card */}
             <ExperienceCard
                 primaryTitle={primaryTitle}
                 secondaryTitle={secondaryTitle}
                 subtitle={subtitle}
+                tech={tech}
+                highlights={highlights}
                 isHovered={isHovered}
             />
-
-            {/* Tooltip - Appears on Hover */}
-            {isHovered && renderOnHover()}
         </div>
     );
 };

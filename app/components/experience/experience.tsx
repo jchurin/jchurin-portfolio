@@ -4,7 +4,7 @@ import experienceData from "./experience.data.json";
 import { cn } from "../../utils/cn";
 import { TimelineItem } from "./TimelineItem";
 
-const ITEMS_PER_PAGE = 6;
+const ITEMS_PER_PAGE = 4;
 
 export function Experience() {
   const { title, subtitle, jobs } = experienceData;
@@ -73,7 +73,7 @@ export function Experience() {
                   "absolute -left-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border/60 bg-background/90 p-2 shadow-lg backdrop-blur-sm transition-all duration-200",
                   activePage === 0
                     ? "opacity-30 cursor-not-allowed"
-                    : "hover:bg-primary/10 hover:border-primary/40"
+                    : "hover:bg-primary/10 hover:border-primary/40 cursor-pointer"
                 )}
                 aria-label="Previous page"
               >
@@ -87,7 +87,7 @@ export function Experience() {
                   "absolute -right-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border/60 bg-background/90 p-2 shadow-lg backdrop-blur-sm transition-all duration-200",
                   activePage === totalPages - 1
                     ? "opacity-30 cursor-not-allowed"
-                    : "hover:bg-primary/10 hover:border-primary/40"
+                    : "hover:bg-primary/10 hover:border-primary/40 cursor-pointer"
                 )}
                 aria-label="Next page"
               >
@@ -119,46 +119,11 @@ export function Experience() {
                         primaryTitle={job.company}
                         secondaryTitle={job.client}
                         subtitle={job.role}
+                        tech={job.tech}
+                        highlights={job.highlights}
                         isHovered={hoveredIndex === globalIndex}
                         index={globalIndex}
                         totalItems={jobs.length}
-                        renderOnHover={() => (
-                          <div className="animate-in fade-in slide-in-from-left-2 absolute left-36 top-1/2 z-50 w-96 -translate-y-1/2 duration-200">
-                            <div className="border-border/60 from-muted/98 to-background/98 shadow-primary/10 relative rounded-xl border bg-linear-to-br p-4 shadow-2xl backdrop-blur-xl">
-                              {/* Tooltip Arrow */}
-                              <div className="bg-muted border-border/60 absolute left-0 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rotate-45 border-b border-l" />
-
-                              {/* Accent bar */}
-                              <div className="from-primary to-secondary absolute bottom-3 left-0 top-3 w-0.5 rounded-r-full bg-linear-to-b" />
-
-                              <div className="space-y-3 pl-3">
-                                {/* Tech Stack */}
-                                {job.tech && job.tech.length > 0 && (
-                                  <div className="flex flex-wrap gap-1.5">
-                                    {job.tech.map((t, k) => (
-                                      <span
-                                        key={k}
-                                        className="bg-background/60 border-border/30 text-muted-foreground rounded-md border px-2 py-0.5 text-xs font-medium"
-                                      >
-                                        {t}
-                                      </span>
-                                    ))}
-                                  </div>
-                                )}
-
-                                {/* Highlights */}
-                                <ul className="text-muted-foreground space-y-1.5 text-xs leading-relaxed">
-                                  {job.highlights.map((highlight, j) => (
-                                    <li key={j} className="flex gap-2">
-                                      <span className="text-primary mt-0.5 shrink-0">•</span>
-                                      <span>{highlight}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        )}
                       />
                     );
                   })}
