@@ -4,7 +4,7 @@ import { Header, Hero, About, Projects, Experience, Skills, Contact } from "../c
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Portfolio" },
+    { title: "JChurin - Frontend Engineer" },
     { name: "description", content: "My career portfolio and projects" },
   ];
 }
