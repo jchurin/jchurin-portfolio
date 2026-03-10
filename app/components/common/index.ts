@@ -1,0 +1,1 @@
+export { PaginatedSlider } from "./PaginatedSlider";
