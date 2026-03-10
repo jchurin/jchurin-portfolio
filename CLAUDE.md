@@ -119,6 +119,52 @@ Avoid CSS-only transitions for dynamic values; inline styles ensure proper anima
 
 ## Development Patterns
 
+### Code Style and Comments
+
+**Comment Policy:**
+Keep code clean and self-documenting. Avoid unnecessary comments that explain what the code does.
+
+**Comments NOT allowed:**
+- Standalone comments explaining obvious code logic
+- Inline comments describing simple operations
+- Section divider comments in non-JSX code
+- TODO comments without tickets/issues
+
+**Comments ARE allowed:**
+- **JSDoc comments** for functions, methods, and complex types
+  ```tsx
+  /**
+   * Calculates the progress percentage for timeline items
+   * @param index - Item index in the list
+   * @param total - Total number of items
+   * @returns Progress value between 0 and 1
+   */
+  function calculateProgress(index: number, total: number): number {
+    return index / (total - 1);
+  }
+  ```
+
+- **JSX section comments** for organizing component markup
+  ```tsx
+  {/* Header Navigation */}
+  <nav>...</nav>
+
+  {/* Main Content Area */}
+  <main>...</main>
+  ```
+
+- **Critical context** where behavior is non-obvious or counterintuitive
+  ```tsx
+  // HACK: Safari doesn't support backdrop-filter with transforms
+  // Using fixed positioning workaround instead
+  ```
+
+**Best Practices:**
+- Write clear, descriptive variable and function names instead of comments
+- Extract complex logic into well-named helper functions
+- Use TypeScript types to document expected data shapes
+- Only comment WHY, not WHAT (the code already shows what)
+
 ### Adding New Sections
 1. Create folder: `app/components/<section>/`
 2. Add component: `<section>.tsx`

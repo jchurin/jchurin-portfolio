@@ -15,15 +15,16 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Detect theme on mount
+    /**
+     * Detects the initial theme preference from localStorage, system preference, or default
+     * @returns Theme preference: "light" or "dark"
+     */
     const detectTheme = (): Theme => {
-      // 1. Check localStorage first
       const stored = localStorage.getItem("theme");
       if (stored === "light" || stored === "dark") {
         return stored;
       }
 
-      // 2. Check system preference
       if (window.matchMedia("(prefers-color-scheme: light)").matches) {
         return "light";
       }
@@ -31,33 +32,36 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         return "dark";
       }
 
-      // 3. Default to dark
       return "dark";
     };
 
     const initialTheme = detectTheme();
     setThemeState(initialTheme);
 
-    // Set the theme class on initial load
     document.documentElement.classList.remove("light", "dark");
     document.documentElement.classList.add(initialTheme);
     setMounted(true);
   }, []);
 
+  /**
+   * Updates the theme and persists it to localStorage
+   * @param newTheme - The theme to set: "light" or "dark"
+   */
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
     localStorage.setItem("theme", newTheme);
 
-    // Remove both classes first, then add the new one
     document.documentElement.classList.remove("light", "dark");
     document.documentElement.classList.add(newTheme);
   };
 
+  /**
+   * Toggles between light and dark themes
+   */
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
-  // Prevent flash of unstyled content
   if (!mounted) {
     return null;
   }
@@ -69,7 +73,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function useTheme() {
+/**
+ * Hook to access and control the current theme
+ * @returns Theme context with current theme, setTheme, and toggleTheme functions
+ * @throws Error if used outside of ThemeProvider
+ */
+export function useTheme(): ThemeContextType {
   const context = useContext(ThemeContext);
   if (!context) {
     throw new Error("useTheme must be used within ThemeProvider");

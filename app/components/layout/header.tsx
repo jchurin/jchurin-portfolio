@@ -14,8 +14,12 @@ export function Header() {
 
     const sectionIds = headerData.links.map((link) => link.href.replace("#", ""));
 
+    /**
+     * Updates the active navigation section based on scroll position
+     * Uses a trigger zone to determine when a section becomes active
+     */
     const updateActiveSection = () => {
-      const triggerZone = 200; // Header height + offset
+      const triggerZone = 200;
 
       let current = sectionIds[0];
       for (const id of sectionIds) {
@@ -32,6 +36,9 @@ export function Header() {
     return () => scrollContainer.removeEventListener("scroll", updateActiveSection);
   }, []);
 
+  /**
+   * Closes the mobile menu when a navigation link is clicked
+   */
   const handleLinkClick = () => {
     setMobileMenuOpen(false);
   };

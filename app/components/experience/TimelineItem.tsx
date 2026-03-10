@@ -13,7 +13,11 @@ interface TimelineItemProps extends React.HTMLAttributes<HTMLDivElement> {
     totalItems: number;
 }
 
-// Map percentage to nearest Tailwind opacity value
+/**
+ * Maps a percentage value to the nearest Tailwind CSS opacity value
+ * @param percent - Percentage value between 0 and 100
+ * @returns Nearest Tailwind opacity value (0, 5, 10, 20, ..., 100)
+ */
 const getTailwindOpacity = (percent: number): number => {
     const opacities = [0, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 100];
     return opacities.reduce((prev, curr) =>
@@ -37,7 +41,6 @@ export const TimelineItem = ({
     const progress = (100 / totalItems) * (index + 1);
     const previousProgress = (100 / totalItems) * index;
 
-    // Invert for gradient: 100 at top (past items) to 0 at bottom (future items)
     const fromOpacity = getTailwindOpacity(100 - previousProgress);
     const toOpacity = getTailwindOpacity(100 - progress);
 

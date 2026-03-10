@@ -11,14 +11,14 @@ export function Projects() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    /**
+     * Checks if viewport width is below mobile breakpoint (640px)
+     */
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640); // sm breakpoint
+      setIsMobile(window.innerWidth < 640);
     };
 
-    // Check on mount
     checkMobile();
-
-    // Add resize listener
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);

@@ -1,9 +1,3 @@
-/**
- * Portfolio Theme - Design tokens
- * Supports manual theme switching via .light and .dark classes
- */
-
-/* Light mode */
 :root,
 .light {
   --theme-primary: oklch(0.55 0.25 265);
@@ -20,7 +14,6 @@
   --theme-ring: oklch(0.55 0.25 265);
 }
 
-/* Dark mode */
 .dark {
   --theme-primary: oklch(0.7 0.22 265);
   --theme-primary-foreground: oklch(0.12 0 0);

@@ -10,8 +10,7 @@ export function calculateYearsOfExperience(startDate: Date): number {
   return Math.floor(diffInYears);
 }
 
-// Start date of professional experience: November 2015
-export const CAREER_START_DATE = new Date(2015, 9, 1); // Month is 0-indexed, so 9 = October
+export const CAREER_START_DATE = new Date(2015, 9, 1);
 
 /**
  * Get current years of experience

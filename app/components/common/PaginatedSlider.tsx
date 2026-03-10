@@ -9,7 +9,6 @@ interface PaginatedSliderProps<T> {
   className?: string;
   showNavigation?: boolean;
   showDots?: boolean;
-  gap?: string;
 }
 
 export function PaginatedSlider<T>({
@@ -19,7 +18,6 @@ export function PaginatedSlider<T>({
   className,
   showNavigation = true,
   showDots = true,
-  gap = "gap-6",
 }: PaginatedSliderProps<T>) {
   const [activePage, setActivePage] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -34,6 +32,10 @@ export function PaginatedSlider<T>({
     return items.slice(start, end);
   });
 
+  /**
+   * Smoothly scrolls the container to the specified page
+   * @param pageIndex - Zero-based index of the page to scroll to
+   */
   const scrollToPage = (pageIndex: number) => {
     const container = scrollContainerRef.current;
     if (!container) return;
@@ -45,6 +47,9 @@ export function PaginatedSlider<T>({
     });
   };
 
+  /**
+   * Updates the active page index based on current scroll position
+   */
   const handleScroll = () => {
     const container = scrollContainerRef.current;
     if (!container) return;

@@ -10,11 +10,9 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  // Handle hash navigation on page load/refresh
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
-      // Small delay to ensure React has rendered
       setTimeout(() => {
         const element = document.querySelector(hash);
         if (element) {

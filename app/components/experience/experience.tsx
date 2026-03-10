@@ -12,20 +12,24 @@ export function Experience() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    /**
+     * Checks if viewport width is below mobile breakpoint (640px)
+     */
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640); // sm breakpoint
+      setIsMobile(window.innerWidth < 640);
     };
 
-    // Check on mount
     checkMobile();
-
-    // Add resize listener
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const itemsPerPage = isMobile ? ITEMS_PER_PAGE_MOBILE : ITEMS_PER_PAGE_DESKTOP;
 
+  /**
+   * Toggles the expanded/collapsed state of an experience card
+   * @param index - Index of the experience item to toggle
+   */
   const handleToggle = (index: number) => {
     setHoveredIndex(hoveredIndex === index ? null : index);
   };
