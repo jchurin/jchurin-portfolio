@@ -1,10 +1,10 @@
 {
   "name": "Juan Churin",
   "title": "Frontend Engineer",
-  "badge": "Frontend engineer",
-  "tagline": "I craft interfaces that feel right. Focused on performance, accessibility, and the details that make products a joy to use.",
+  "badge": "Senior Frontend Engineer",
+  "tagline": "Building exceptional user experiences with modern web technologies. Specialized in React, TypeScript, and scalable design systems.",
   "cta": {
-    "primary": "View my work",
-    "secondary": "Get in touch"
+    "primary": "View Projects",
+    "secondary": "Let's Connect"
   }
 }

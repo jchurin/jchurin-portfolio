@@ -1,7 +1,9 @@
 import aboutData from "./about.data.json";
+import { getYearsOfExperience } from "../../utils/experience";
 
 export function About() {
   const { title, bio, highlights } = aboutData;
+  const yearsOfExperience = getYearsOfExperience();
 
   return (
     <section
@@ -26,7 +28,7 @@ export function About() {
         <div className="text-muted-foreground mb-8 sm:mb-10 space-y-4 sm:space-y-6 leading-relaxed">
           {bio.map((paragraph, i) => (
             <p key={i} className="text-base sm:text-lg">
-              {paragraph}
+              {paragraph.replace("{years}", yearsOfExperience.toString())}
             </p>
           ))}
         </div>
@@ -35,7 +37,7 @@ export function About() {
           {highlights.map((item, i) => (
             <li
               key={i}
-              className="border-border/60 from-primary/10 to-secondary/10 text-foreground hover:border-primary/40 hover:shadow-primary/10 inline-flex cursor-default items-center rounded-lg sm:rounded-xl border bg-gradient-to-br px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-medium backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:shadow-md"
+              className="border-border/60 from-primary/10 to-secondary/10 text-foreground hover:border-primary/40 hover:shadow-primary/10 inline-flex cursor-default items-center rounded-lg sm:rounded-xl border bg-linear-to-br px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-medium backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:shadow-md"
             >
               {item}
             </li>

@@ -30,7 +30,7 @@ export function Contact() {
           {title}
         </h2>
         <p className="text-muted-foreground mb-8 sm:mb-12 text-base sm:text-lg text-center sm:text-left">
-          Let's connect and create something amazing together.
+          Available for freelance projects and full-time opportunities. Let's discuss how I can help bring your ideas to life.
         </p>
 
         <ul className="space-y-3">

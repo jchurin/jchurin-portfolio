@@ -1,11 +1,12 @@
 {
-  "title": "Projects",
-  "subtitle": "A selection of things I've built",
+  "title": "Featured Projects",
+  "subtitle": "A selection of work showcasing technical depth and attention to detail",
   "projects": [
     {
       "title": "React Design System Library",
-      "description": "A React design system library with reusable components and a Tailwind-themed approach.",
-      "tech": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+      "description": "A comprehensive design system featuring 20+ production-ready components with TypeScript support, theme customization, and accessibility built-in. Includes documentation, interactive examples, and a flexible Tailwind-based styling approach for rapid development.",
+      "image": "/assets/images/project-1.png",
+      "tech": ["React", "TypeScript", "Tailwind CSS", "Vite", "Storybook"],
       "links": {
         "live": "https://jchurin.github.io/react-vite-design-system-library",
         "github": "https://github.com/jchurin/react-vite-design-system-library"

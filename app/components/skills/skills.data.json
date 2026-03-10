@@ -1,8 +1,28 @@
 {
-  "title": "Skills",
-  "skills": ["JavaScript", "React", "TypeScript", "Redux", "Context", "HTML5", "CSS3"],
+  "title": "Technical Expertise",
+  "skills": [
+    "React",
+    "TypeScript",
+    "JavaScript (ES6+)",
+    "Redux",
+    "React Query",
+    "Next.js",
+    "HTML5",
+    "CSS3 / Sass",
+    "Tailwind CSS",
+    "Material-UI",
+    "Styled Components",
+    "Jest",
+    "React Testing Library",
+    "Git",
+    "Webpack",
+    "Vite",
+    "Figma",
+    "Responsive Design",
+    "Web Accessibility"
+  ],
   "languages": [
     { "name": "Spanish", "level": "Native" },
-    { "name": "English", "level": "B1" }
+    { "name": "English", "level": "Professional Working Proficiency (B1)" }
   ]
 }

@@ -1,12 +1,15 @@
 {
-  "title": "About",
+  "title": "About Me",
   "bio": [
-    "I'm Juan, a frontend engineer with a focus on building interfaces that are fast, accessible, and enjoyable to use. I care about the details—from how a button feels when you click it to how the app behaves when the network is slow.",
-    "When I'm not coding, I'm usually exploring new tools, reading about design systems, or thinking about how to make the web a better place for everyone."
+    "I'm a frontend engineer with over {years} years of experience building production-ready applications for startups and enterprises. I specialize in React, TypeScript, and modern frontend architecture, with a strong focus on creating scalable, maintainable solutions.",
+    "My approach combines technical excellence with user-centric design. I'm passionate about crafting interfaces that are not only visually appealing but also performant, accessible, and delightful to use. From implementing complex state management to building comprehensive design systems, I thrive on solving challenging problems that directly impact user experience."
   ],
   "highlights": [
-    "Accessibility-first approach",
-    "Performance & UX obsessed",
-    "Clean, maintainable code"
+    "React & TypeScript Expert",
+    "Design Systems & Component Architecture",
+    "Performance Optimization",
+    "Accessibility Champion",
+    "Modern Frontend Tooling",
+    "Mentoring & Code Review"
   ]
 }
