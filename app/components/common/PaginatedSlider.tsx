@@ -64,35 +64,35 @@ export function PaginatedSlider<T>({
 
   return (
     <div className={cn("relative", className)}>
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Hidden on mobile, shown on tablet+ */}
       {showNavigation && totalPages > 1 && (
         <>
           <button
             onClick={() => scrollToPage(Math.max(0, activePage - 1))}
             disabled={activePage === 0}
             className={cn(
-              "absolute -left-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border/60 bg-background/90 p-2 shadow-lg backdrop-blur-sm transition-all duration-200",
+              "hidden sm:block absolute -left-2 md:-left-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border/60 bg-background/90 p-1.5 md:p-2 shadow-lg backdrop-blur-sm transition-all duration-200",
               activePage === 0
                 ? "opacity-30 cursor-not-allowed"
                 : "hover:bg-primary/10 hover:border-primary/40 cursor-pointer"
             )}
             aria-label="Previous page"
           >
-            <ChevronLeft className="h-5 w-5" />
+            <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
           </button>
 
           <button
             onClick={() => scrollToPage(Math.min(totalPages - 1, activePage + 1))}
             disabled={activePage === totalPages - 1}
             className={cn(
-              "absolute -right-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border/60 bg-background/90 p-2 shadow-lg backdrop-blur-sm transition-all duration-200",
+              "hidden sm:block absolute -right-2 md:-right-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border/60 bg-background/90 p-1.5 md:p-2 shadow-lg backdrop-blur-sm transition-all duration-200",
               activePage === totalPages - 1
                 ? "opacity-30 cursor-not-allowed"
                 : "hover:bg-primary/10 hover:border-primary/40 cursor-pointer"
             )}
             aria-label="Next page"
           >
-            <ChevronRight className="h-5 w-5" />
+            <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
           </button>
         </>
       )}
@@ -112,18 +112,18 @@ export function PaginatedSlider<T>({
         })}
       </div>
 
-      {/* Navigation Dots */}
+      {/* Navigation Dots - More prominent on mobile */}
       {showDots && totalPages > 1 && (
-        <div className="mt-8 flex justify-center gap-2">
+        <div className="mt-6 sm:mt-8 flex justify-center gap-2">
           {pages.map((_, pageIndex) => (
             <button
               key={pageIndex}
               onClick={() => scrollToPage(pageIndex)}
               className={cn(
-                "h-2 rounded-full transition-all duration-300",
+                "h-2 sm:h-2 rounded-full transition-all duration-300 touch-manipulation",
                 activePage === pageIndex
-                  ? "w-8 bg-primary"
-                  : "w-2 bg-border hover:bg-primary/50"
+                  ? "w-8 sm:w-8 bg-primary"
+                  : "w-2 sm:w-2 bg-border hover:bg-primary/50"
               )}
               aria-label={`Go to page ${pageIndex + 1}`}
             />

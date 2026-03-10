@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="container mx-auto px-4">
+      <main className="container mx-auto px-2 sm:px-4">
         <Hero />
         <About />
         <Projects />

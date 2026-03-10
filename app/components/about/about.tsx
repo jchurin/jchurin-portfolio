@@ -18,24 +18,24 @@ export function About() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-3xl px-4">
-        <h2 className="font-heading text-foreground mb-8 text-3xl font-normal sm:text-4xl">
+      <div className="relative mx-auto max-w-3xl px-4 sm:px-6">
+        <h2 className="font-heading text-foreground mb-6 sm:mb-8 text-2xl sm:text-3xl md:text-4xl font-normal text-center sm:text-left">
           {title}
         </h2>
 
-        <div className="text-muted-foreground mb-10 space-y-6 leading-relaxed">
+        <div className="text-muted-foreground mb-8 sm:mb-10 space-y-4 sm:space-y-6 leading-relaxed">
           {bio.map((paragraph, i) => (
-            <p key={i} className="text-lg">
+            <p key={i} className="text-base sm:text-lg">
               {paragraph}
             </p>
           ))}
         </div>
 
-        <ul className="flex flex-wrap gap-3">
+        <ul className="flex flex-wrap gap-2 sm:gap-3 justify-center sm:justify-start">
           {highlights.map((item, i) => (
             <li
               key={i}
-              className="border-border/60 from-primary/10 to-secondary/10 text-foreground hover:border-primary/40 hover:shadow-primary/10 inline-flex cursor-default items-center rounded-xl border bg-gradient-to-br px-4 py-2.5 text-sm font-medium backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:shadow-md"
+              className="border-border/60 from-primary/10 to-secondary/10 text-foreground hover:border-primary/40 hover:shadow-primary/10 inline-flex cursor-default items-center rounded-lg sm:rounded-xl border bg-gradient-to-br px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-medium backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:shadow-md"
             >
               {item}
             </li>

@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 import headerData from "./header.data.json";
+import { cn } from "../../utils/cn";
 
 export function Header() {
   const [activeSection, setActiveSection] = useState<string | null>("hero");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const scrollContainer = document.querySelector("[data-scroll-container]");
@@ -28,18 +31,24 @@ export function Header() {
     return () => scrollContainer.removeEventListener("scroll", updateActiveSection);
   }, []);
 
+  const handleLinkClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header className="border-border/60 bg-background/70 sticky top-0 z-50 border-b shadow-sm backdrop-blur-xl">
-      <nav className="container mx-auto flex items-center justify-between px-4 py-4">
+      <nav className="container mx-auto flex items-center justify-between px-4 py-3 md:py-4">
         {/* Logo / Name */}
         <a
           href="#hero"
-          className="font-heading text-foreground hover:text-primary text-xl transition-colors"
+          className="font-heading text-foreground hover:text-primary text-lg md:text-xl transition-colors"
+          onClick={handleLinkClick}
         >
           {headerData.logo}
         </a>
-        {/* Section links */}
-        <ul className="text-muted-foreground flex gap-6 text-sm">
+
+        {/* Desktop Navigation */}
+        <ul className="text-muted-foreground hidden md:flex gap-4 lg:gap-6 text-sm">
           {headerData.links.map(({ href, label }) => {
             const sectionId = href.replace("#", "");
             const isActive = activeSection === sectionId;
@@ -48,20 +57,59 @@ export function Header() {
               <li key={href}>
                 <a
                   href={href}
-                  className={`hover:text-foreground relative transition-colors ${
-                    isActive ? "text-foreground font-medium" : ""
-                  }`}
+                  className={cn(
+                    "hover:text-foreground relative transition-colors",
+                    isActive && "text-foreground font-medium"
+                  )}
                 >
                   {label}
                   {isActive && (
-                    <span className="from-primary to-secondary absolute right-0 -bottom-[1.15rem] left-0 h-0.5 rounded-full bg-gradient-to-r" />
+                    <span className="from-primary to-secondary absolute right-0 -bottom-[1.15rem] left-0 h-0.5 rounded-full bg-linear-to-r" />
                   )}
                 </a>
               </li>
             );
           })}
         </ul>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="text-foreground hover:text-primary md:hidden p-2 transition-colors"
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </nav>
+
+      {/* Mobile Navigation Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur-xl">
+          <ul className="container mx-auto px-4 py-4 space-y-3">
+            {headerData.links.map(({ href, label }) => {
+              const sectionId = href.replace("#", "");
+              const isActive = activeSection === sectionId;
+
+              return (
+                <li key={href}>
+                  <a
+                    href={href}
+                    onClick={handleLinkClick}
+                    className={cn(
+                      "block py-2 px-4 rounded-lg transition-colors",
+                      isActive
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                    )}
+                  >
+                    {label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </header>
   );
 }

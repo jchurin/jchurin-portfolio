@@ -36,9 +36,9 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative mx-auto flex max-w-3xl flex-1 flex-col items-center justify-center px-4 text-center">
+      <div className="relative mx-auto flex max-w-3xl flex-1 flex-col items-center justify-center px-4 sm:px-6 text-center">
         {/* Badge */}
-        <span className="border-primary/20 from-primary/10 to-secondary/10 text-foreground shadow-primary/5 mb-8 inline-flex items-center gap-2 rounded-full border bg-gradient-to-r px-4 py-1.5 text-sm font-medium shadow-lg backdrop-blur-sm">
+        <span className="border-primary/20 from-primary/10 to-secondary/10 text-foreground shadow-primary/5 mb-6 sm:mb-8 inline-flex items-center gap-2 rounded-full border bg-linear-to-r px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-medium shadow-lg backdrop-blur-sm">
           <span className="relative flex h-2 w-2">
             <span className="bg-primary absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
             <span className="bg-primary shadow-primary/50 relative inline-flex h-2 w-2 rounded-full shadow-lg" />
@@ -46,37 +46,37 @@ export function Hero() {
           {badge}
         </span>
 
-        {/* Name - serif for elegance */}
-        <h1 className="font-heading text-foreground from-foreground via-foreground to-foreground/70 mb-4 bg-linear-to-br bg-clip-text text-5xl font-normal tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+        {/* Name */}
+        <h1 className="font-heading text-foreground from-foreground via-foreground to-foreground/70 mb-3 sm:mb-4 bg-linear-to-br bg-clip-text text-4xl font-normal tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl px-2">
           {name}
         </h1>
 
         {/* Tagline */}
-        <p className="text-muted-foreground mb-12 max-w-xl text-xl leading-relaxed font-light sm:text-2xl">
+        <p className="text-muted-foreground mb-8 sm:mb-12 max-w-xl text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed font-light px-2">
           {tagline}
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col gap-4 sm:flex-row">
+        <div className="flex flex-col w-full sm:w-auto sm:flex-row gap-3 sm:gap-4 px-4 sm:px-0">
           <a
             href="#projects"
-            className="group from-primary to-secondary text-primary-foreground hover:shadow-primary/25 inline-flex items-center justify-center rounded-lg bg-linear-to-r px-8 py-3.5 font-medium transition-all duration-200 hover:shadow-xl"
+            className="group from-primary to-secondary text-primary-foreground hover:shadow-primary/25 inline-flex items-center justify-center rounded-lg bg-linear-to-r px-6 sm:px-8 py-3 sm:py-3.5 font-medium transition-all duration-200 hover:shadow-xl text-sm sm:text-base"
           >
             {cta.primary}
           </a>
           <a
             href="#contact"
-            className="border-border/60 bg-background/60 text-foreground hover:bg-muted/50 hover:border-primary/30 inline-flex items-center justify-center rounded-lg border px-8 py-3.5 font-medium backdrop-blur-sm transition-all duration-200 hover:shadow-lg"
+            className="border-border/60 bg-background/60 text-foreground hover:bg-muted/50 hover:border-primary/30 inline-flex items-center justify-center rounded-lg border px-6 sm:px-8 py-3 sm:py-3.5 font-medium backdrop-blur-sm transition-all duration-200 hover:shadow-lg text-sm sm:text-base"
           >
             {cta.secondary}
           </a>
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - Hidden on mobile */}
       <a
         href="#about"
-        className="text-muted-foreground/60 hover:text-muted-foreground flex flex-col items-center gap-2 self-center pb-8 transition-colors"
+        className="text-muted-foreground/60 hover:text-muted-foreground hidden sm:flex flex-col items-center gap-2 self-center pb-6 md:pb-8 transition-colors"
         aria-label="Scroll to about"
       >
         <span className="text-xs tracking-widest uppercase">Scroll</span>

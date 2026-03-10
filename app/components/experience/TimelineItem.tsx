@@ -43,18 +43,18 @@ export const TimelineItem = ({
 
     return (
         <div
-            className="relative flex flex-row items-center gap-12"
+            className="relative flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-12"
             {...props}
         >
-            {/* Date - Left Side */}
-            <div className="min-w-36 text-right">
-                <span className="text-muted-foreground text-xs font-medium">{datePeriod}</span>
+            {/* Date - Top on mobile, Left on desktop */}
+            <div className="sm:min-w-36 sm:text-right">
+                <span className="text-muted-foreground text-xs sm:text-xs font-medium block sm:inline">{datePeriod}</span>
             </div>
 
-            {/* Timeline progress line */}
+            {/* Timeline progress line - Hidden on mobile, shown on desktop */}
             <div
                 className={cn(
-                    "absolute top-0 bottom-0 left-42 w-px",
+                    "hidden sm:block absolute top-0 bottom-0 left-42 w-px",
                     "bg-linear-to-b",
                     `from-primary/${fromOpacity}`,
                     `to-primary/${toOpacity}`
@@ -69,6 +69,7 @@ export const TimelineItem = ({
                 tech={tech}
                 highlights={highlights}
                 isHovered={isHovered}
+                datePeriod={datePeriod}
             />
         </div>
     );

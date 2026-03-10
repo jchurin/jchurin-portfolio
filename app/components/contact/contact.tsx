@@ -25,11 +25,11 @@ export function Contact() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-3xl px-4">
-        <h2 className="font-heading from-foreground to-foreground/70 mb-4 bg-gradient-to-br bg-clip-text text-3xl font-normal text-transparent sm:text-4xl">
+      <div className="relative mx-auto max-w-3xl px-4 sm:px-6">
+        <h2 className="font-heading from-foreground to-foreground/70 mb-4 bg-gradient-to-br bg-clip-text text-2xl sm:text-3xl md:text-4xl font-normal text-transparent text-center sm:text-left">
           {title}
         </h2>
-        <p className="text-muted-foreground mb-12 text-lg">
+        <p className="text-muted-foreground mb-8 sm:mb-12 text-base sm:text-lg text-center sm:text-left">
           Let's connect and create something amazing together.
         </p>
 
@@ -42,14 +42,14 @@ export function Contact() {
                   href={item.href}
                   target={item.type === "linkedin" ? "_blank" : undefined}
                   rel={item.type === "linkedin" ? "noreferrer" : undefined}
-                  className="group border-border/60 from-muted/30 to-muted/10 hover:border-primary/40 hover:shadow-primary/5 flex items-center gap-4 rounded-xl border bg-gradient-to-r p-5 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                  className="group border-border/60 from-muted/30 to-muted/10 hover:border-primary/40 hover:shadow-primary/5 flex items-center gap-3 sm:gap-4 rounded-lg sm:rounded-xl border bg-gradient-to-r p-4 sm:p-5 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
                 >
                   {Icon && (
-                    <div className="from-primary/20 to-secondary/20 text-primary flex size-12 items-center justify-center rounded-lg bg-gradient-to-br shadow-sm transition-transform duration-200 group-hover:scale-110">
-                      <Icon className="size-5 shrink-0" />
+                    <div className="from-primary/20 to-secondary/20 text-primary flex size-10 sm:size-12 items-center justify-center rounded-lg bg-gradient-to-br shadow-sm transition-transform duration-200 group-hover:scale-110 shrink-0">
+                      <Icon className="size-4 sm:size-5" />
                     </div>
                   )}
-                  <span className="text-foreground group-hover:text-primary text-lg font-medium transition-colors">
+                  <span className="text-foreground group-hover:text-primary text-base sm:text-lg font-medium transition-colors">
                     {item.label}
                   </span>
                 </a>
