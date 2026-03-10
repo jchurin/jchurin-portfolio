@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import type { Route } from "./+types/home";
 import { Header, Hero, About, Projects, Experience, Skills, Contact } from "../components";
 
@@ -9,6 +10,20 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  // Handle hash navigation on page load/refresh
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      // Small delay to ensure React has rendered
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  }, []);
+
   return (
     <>
       <Header />
