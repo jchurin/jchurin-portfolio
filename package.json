@@ -1,6 +1,5 @@
 {
   "name": "",
-  "homepage": "https://jchurin.github.io/jchurin-portfolio",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,13 +9,12 @@
     "typecheck": "react-router typegen && tsc",
     "format": "prettier --write \"app/**/*.{ts,tsx,js,jsx,json,css}\"",
     "format:check": "prettier --check \"app/**/*.{ts,tsx,js,jsx,json,css}\"",
-    "generate:favicon": "node scripts/generate-favicon.js",
-    "predeploy": "npm run generate:favicon && npm run build && cp build/client/index.html build/client/404.html",
-    "deploy": "gh-pages -d build/client"
+    "generate:favicon": "node scripts/generate-favicon.js"
   },
   "dependencies": {
     "@react-router/node": "7.12.0",
     "@react-router/serve": "7.12.0",
+    "@vercel/react-router": "^1.2.6",
     "clsx": "^2.1.1",
     "gh-pages": "^6.3.0",
     "isbot": "^5.1.31",

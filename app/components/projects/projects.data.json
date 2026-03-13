@@ -21,6 +21,16 @@
         "live": "https://recipe-web-nu.vercel.app/es",
         "github": "https://github.com/jchurin/recipe-web"
       }
+    },
+    {
+      "title": "Minecraft Clone",
+      "description": "A Minecraft clone built with React and Vite. It allows you to build and explore a 3D world.",
+      "image": "/assets/images/project-3.png",
+      "tech": ["React", "TypeScript", "Vite"],
+      "links": {
+        "live": "https://minecraft-clon-six.vercel.app/",
+        "github": "https://github.com/jchurin/minecraft_clon"
+      }
     }
   ]
 }
