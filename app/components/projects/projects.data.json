@@ -8,8 +8,18 @@
       "image": "/assets/images/project-1.png",
       "tech": ["React", "TypeScript", "Tailwind CSS", "Vite", "Storybook"],
       "links": {
-        "live": "https://jchurin.github.io/react-vite-design-system-library",
+        "live": "https://react-vite-design-system-library.vercel.app/?path=/docs/ui-alert--docs",
         "github": "https://github.com/jchurin/react-vite-design-system-library"
+      }
+    },
+    {
+      "title": "Food Recipe App",
+      "description": "A food recipe app that allows you to search for recipes and view detailed information about them.",
+      "image": "/assets/images/project-2.png",
+      "tech": ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+      "links": {
+        "live": "https://recipe-web-nu.vercel.app/es",
+        "github": "https://github.com/jchurin/recipe-web"
       }
     }
   ]
