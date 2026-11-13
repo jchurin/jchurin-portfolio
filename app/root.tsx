@@ -35,10 +35,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="overflow-hidden touch-pan-y">
+      <body className="touch-pan-y overflow-hidden">
         <ThemeProvider>
           <div
-            className="h-screen snap-y snap-mandatory overflow-y-auto scroll-smooth overscroll-y-contain"
+            className="h-dvh snap-y snap-mandatory scroll-pt-(--header-height) overflow-y-auto overscroll-y-contain scroll-smooth"
             data-scroll-container
           >
             {children}

@@ -1,10 +1,14 @@
 {
   "name": "Juan Churin",
   "title": "Frontend Engineer",
-  "badge": "Senior Frontend Engineer",
-  "tagline": "Building exceptional user experiences with modern web technologies. Specialized in React, TypeScript, and scalable design systems.",
+  "badge": "Senior Frontend Engineer · AI-Native",
+  "tagline": "Building exceptional user experiences with React and TypeScript, and shipping them faster with AI-assisted development.",
   "cta": {
     "primary": "View Projects",
     "secondary": "Let's Connect"
+  },
+  "aiToolkit": {
+    "label": "Daily AI toolkit",
+    "tools": ["Claude Code", "Cursor", "GitHub Copilot", "Codex"]
   }
 }

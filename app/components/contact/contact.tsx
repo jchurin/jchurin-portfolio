@@ -13,7 +13,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-section relative flex min-h-screen snap-start flex-col justify-center overflow-hidden"
+      className="py-section min-h-below-header relative flex snap-start flex-col justify-center overflow-hidden"
     >
       {/* Decorative background gradient */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -26,11 +26,12 @@ export function Contact() {
       </div>
 
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6">
-        <h2 className="font-heading from-foreground to-foreground/70 mb-4 bg-gradient-to-br bg-clip-text text-2xl sm:text-3xl md:text-4xl font-normal text-transparent text-center sm:text-left">
+        <h2 className="font-heading from-foreground to-foreground/70 mb-4 bg-gradient-to-br bg-clip-text text-center text-2xl font-normal text-transparent sm:text-left sm:text-3xl md:text-4xl">
           {title}
         </h2>
-        <p className="text-muted-foreground mb-8 sm:mb-12 text-base sm:text-lg text-center sm:text-left">
-          Available for freelance projects and full-time opportunities. Let's discuss how I can help bring your ideas to life.
+        <p className="text-muted-foreground mb-8 text-center text-base sm:mb-12 sm:text-left sm:text-lg">
+          Available for freelance projects and full-time opportunities. Let's discuss how I can help
+          bring your ideas to life.
         </p>
 
         <ul className="space-y-3">
@@ -42,14 +43,14 @@ export function Contact() {
                   href={item.href}
                   target={item.type === "linkedin" ? "_blank" : undefined}
                   rel={item.type === "linkedin" ? "noreferrer" : undefined}
-                  className="group border-border/60 from-muted/30 to-muted/10 hover:border-primary/40 hover:shadow-primary/5 flex items-center gap-3 sm:gap-4 rounded-lg sm:rounded-xl border bg-gradient-to-r p-4 sm:p-5 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                  className="group border-border/60 from-muted/30 to-muted/10 hover:border-primary/40 hover:shadow-primary/5 flex items-center gap-3 rounded-lg border bg-gradient-to-r p-4 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg sm:gap-4 sm:rounded-xl sm:p-5"
                 >
                   {Icon && (
-                    <div className="from-primary/20 to-secondary/20 text-primary flex size-10 sm:size-12 items-center justify-center rounded-lg bg-gradient-to-br shadow-sm transition-transform duration-200 group-hover:scale-110 shrink-0">
+                    <div className="from-primary/20 to-secondary/20 text-primary flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br shadow-sm transition-transform duration-200 group-hover:scale-110 sm:size-12">
                       <Icon className="size-4 sm:size-5" />
                     </div>
                   )}
-                  <span className="text-foreground group-hover:text-primary text-base sm:text-lg font-medium transition-colors">
+                  <span className="text-foreground group-hover:text-primary text-base font-medium transition-colors sm:text-lg">
                     {item.label}
                   </span>
                 </a>

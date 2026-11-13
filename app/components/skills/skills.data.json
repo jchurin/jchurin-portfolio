@@ -21,8 +21,25 @@
     "Responsive Design",
     "Web Accessibility"
   ],
+  "aiTools": {
+    "title": "AI-Assisted Development",
+    "items": [
+      "Claude Code",
+      "Cursor",
+      "GitHub Copilot",
+      "Codex",
+      "Prompt Engineering",
+      "Agentic Workflows"
+    ]
+  },
   "languages": [
-    { "name": "Spanish", "level": "Native" },
-    { "name": "English", "level": "Professional Working Proficiency (B1)" }
+    {
+      "name": "Spanish",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "Professional Working Proficiency (B2)"
+    }
   ]
 }

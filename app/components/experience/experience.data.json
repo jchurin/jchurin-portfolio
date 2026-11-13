@@ -4,9 +4,21 @@
   "jobs": [
     {
       "company": "Softwaremind",
+      "client": "FedEx",
+      "role": "Full-Stack Engineer",
+      "period": "2026 - Now",
+      "tech": ["React", "TypeScript", "TanStack", "FastAPI", "PostgreSQL"],
+      "highlights": [
+        "Building data-intensive workflows that replace spreadsheet-based processes with a centralized web app: complex tables, filtering, search, and cross-data calculations.",
+        "Frontend-focused full-stack work with React, TanStack Query/Router/Table, and Tailwind, plus REST APIs in Python/FastAPI and PostgreSQL debugging.",
+        "Set up a contract-driven workflow with Orval (types, Zod schemas, and TanStack Query hooks from the API spec) and introduced Playwright end-to-end tests."
+      ]
+    },
+    {
+      "company": "Softwaremind",
       "client": "Airia",
       "role": "Frontend Engineer",
-      "period": "Nov 2024 - Now",
+      "period": "Nov 2024 - 2026",
       "tech": ["React", "TypeScript", "AI/ML"],
       "highlights": [
         "Built scalable React/TypeScript apps for an AI governance platform with data-intensive dashboards and compliance workflows.",

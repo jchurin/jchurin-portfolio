@@ -46,3 +46,15 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/**
+ * Full-height section: fills exactly the visible area below the sticky header.
+ * Pairs with scroll-pt-(--header-height) on the scroll container so snapped
+ * sections are never hidden behind the header.
+ */
+@utility min-h-below-header {
+  min-height: calc(100dvh - var(--header-height));
+}
+
+/* Phones too short to fit full sections comfortably (e.g. iPhone SE, 360x800 Androids) */
+@custom-variant short (@media (max-width: 639px) and (max-height: 820px));

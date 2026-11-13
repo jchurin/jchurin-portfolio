@@ -31,6 +31,16 @@
         "live": "https://minecraft-clon-six.vercel.app/",
         "github": "https://github.com/jchurin/minecraft_clon"
       }
+    },
+    {
+      "title": "React Weirdness",
+      "description": "An interactive guide to React's most surprising behaviors: stale closures, index keys, effect loops, memo pitfalls and race conditions. Every puzzle has a live demo to break, with the explanation one click away.",
+      "image": "/assets/images/project-4.png",
+      "tech": ["React", "TypeScript", "Vite", "React Router", "Claude Code"],
+      "links": {
+        "live": "https://react-weirdness.vercel.app/",
+        "github": "https://github.com/jchurin/react-weirdness"
+      }
     }
   ]
 }

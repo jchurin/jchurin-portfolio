@@ -12,10 +12,9 @@ async function findLatestResumeVersion(maxAttempts = 20): Promise<number> {
 
   for (let i = 1; i <= maxAttempts; i++) {
     try {
-      const response = await fetch(
-        `${import.meta.env.BASE_URL}resume/${i}.pdf`,
-        { method: "HEAD" }
-      );
+      const response = await fetch(`${import.meta.env.BASE_URL}resume/${i}.pdf`, {
+        method: "HEAD",
+      });
 
       if (response.ok) {
         latestVersion = i;
@@ -50,11 +49,11 @@ export function ResumeDownload() {
       className={cn(
         "relative flex items-center justify-center",
         "size-9 rounded-lg",
-        "border border-border/40 bg-background/80 backdrop-blur-sm",
+        "border-border/40 bg-background/80 border backdrop-blur-sm",
         "text-muted-foreground hover:text-foreground hover:border-border",
         "transition-all duration-300",
         "hover:scale-105 active:scale-95",
-        isLoading && "opacity-50 cursor-wait"
+        isLoading && "cursor-wait opacity-50"
       )}
       aria-label="Download Resume"
       title="Download Resume (PDF)"

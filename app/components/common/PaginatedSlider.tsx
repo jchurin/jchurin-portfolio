@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, type ReactNode } from "react";
+import { useState, useRef, type ReactNode } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "../../utils/cn";
 
@@ -19,11 +19,13 @@ export function PaginatedSlider<T>({
   showNavigation = true,
   showDots = true,
 }: PaginatedSliderProps<T>) {
-  const [activePage, setActivePage] = useState(0);
+  const [scrolledPage, setScrolledPage] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Calculate total pages
   const totalPages = Math.ceil(items.length / itemsPerPage);
+  // itemsPerPage can shrink the page count (e.g. on resize), so never point past the last page
+  const activePage = Math.min(scrolledPage, totalPages - 1);
 
   // Group items into pages
   const pages = Array.from({ length: totalPages }, (_, pageIndex) => {
@@ -40,32 +42,23 @@ export function PaginatedSlider<T>({
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    const pageWidth = container.scrollWidth / totalPages;
     container.scrollTo({
-      left: pageWidth * pageIndex,
+      left: container.clientWidth * pageIndex,
       behavior: "smooth",
     });
   };
 
   /**
-   * Updates the active page index based on current scroll position
+   * Updates the active page index based on current scroll position.
+   * Every page is exactly one container width wide (min-w-full), so the
+   * container's own width is the page width, whatever the current page count.
    */
   const handleScroll = () => {
     const container = scrollContainerRef.current;
-    if (!container) return;
+    if (!container || container.clientWidth === 0) return;
 
-    const pageWidth = container.scrollWidth / totalPages;
-    const currentPage = Math.round(container.scrollLeft / pageWidth);
-    setActivePage(currentPage);
+    setScrolledPage(Math.round(container.scrollLeft / container.clientWidth));
   };
-
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-
-    container.addEventListener("scroll", handleScroll, { passive: true });
-    return () => container.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className={cn("relative", className)}>
@@ -76,9 +69,9 @@ export function PaginatedSlider<T>({
             onClick={() => scrollToPage(Math.max(0, activePage - 1))}
             disabled={activePage === 0}
             className={cn(
-              "hidden sm:block absolute -left-2 md:-left-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border/60 bg-background/90 p-1.5 md:p-2 shadow-lg backdrop-blur-sm transition-all duration-200",
+              "border-border/60 bg-background/90 absolute top-1/2 -left-2 z-10 hidden -translate-y-1/2 rounded-full border p-1.5 shadow-lg backdrop-blur-sm transition-all duration-200 sm:block md:-left-4 md:p-2",
               activePage === 0
-                ? "opacity-30 cursor-not-allowed"
+                ? "cursor-not-allowed opacity-30"
                 : "hover:bg-primary/10 hover:border-primary/40 cursor-pointer"
             )}
             aria-label="Previous page"
@@ -90,9 +83,9 @@ export function PaginatedSlider<T>({
             onClick={() => scrollToPage(Math.min(totalPages - 1, activePage + 1))}
             disabled={activePage === totalPages - 1}
             className={cn(
-              "hidden sm:block absolute -right-2 md:-right-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border/60 bg-background/90 p-1.5 md:p-2 shadow-lg backdrop-blur-sm transition-all duration-200",
+              "border-border/60 bg-background/90 absolute top-1/2 -right-2 z-10 hidden -translate-y-1/2 rounded-full border p-1.5 shadow-lg backdrop-blur-sm transition-all duration-200 sm:block md:-right-4 md:p-2",
               activePage === totalPages - 1
-                ? "opacity-30 cursor-not-allowed"
+                ? "cursor-not-allowed opacity-30"
                 : "hover:bg-primary/10 hover:border-primary/40 cursor-pointer"
             )}
             aria-label="Next page"
@@ -105,7 +98,8 @@ export function PaginatedSlider<T>({
       {/* Horizontal Scroll Container with Pages */}
       <div
         ref={scrollContainerRef}
-        className="flex snap-x snap-mandatory overflow-x-auto scrollbar-hide"
+        onScroll={handleScroll}
+        className="scrollbar-hide flex snap-x snap-mandatory overflow-x-auto"
       >
         {pages.map((pageItems, pageIndex) => {
           const startIndex = pageIndex * itemsPerPage;
@@ -119,16 +113,16 @@ export function PaginatedSlider<T>({
 
       {/* Navigation Dots - More prominent on mobile */}
       {showDots && totalPages > 1 && (
-        <div className="mt-6 sm:mt-8 flex justify-center gap-2">
+        <div className="mt-6 flex justify-center gap-2 sm:mt-8">
           {pages.map((_, pageIndex) => (
             <button
               key={pageIndex}
               onClick={() => scrollToPage(pageIndex)}
               className={cn(
-                "h-2 sm:h-2 rounded-full transition-all duration-300 touch-manipulation",
+                "h-2 touch-manipulation rounded-full transition-all duration-300 sm:h-2",
                 activePage === pageIndex
-                  ? "w-8 sm:w-8 bg-primary"
-                  : "w-2 sm:w-2 bg-border hover:bg-primary/50"
+                  ? "bg-primary w-8 sm:w-8"
+                  : "bg-border hover:bg-primary/50 w-2 sm:w-2"
               )}
               aria-label={`Go to page ${pageIndex + 1}`}
             />

@@ -45,19 +45,19 @@ export function Header() {
   };
 
   return (
-    <header className="border-border/60 bg-background/70 sticky top-0 z-50 border-b shadow-sm backdrop-blur-xl">
-      <nav className="container mx-auto flex items-center justify-between px-4 py-3 md:py-4">
+    <header className="border-border/60 bg-background/70 sticky top-0 z-50 h-(--header-height) border-b shadow-sm backdrop-blur-xl">
+      <nav className="container mx-auto flex h-full items-center justify-between px-4">
         {/* Logo / Name */}
         <a
           href="#hero"
-          className="font-heading text-foreground hover:text-primary text-lg md:text-xl transition-colors"
+          className="font-heading text-foreground hover:text-primary text-lg transition-colors md:text-xl"
           onClick={handleLinkClick}
         >
           {headerData.logo}
         </a>
 
         {/* Desktop Navigation */}
-        <ul className="text-muted-foreground hidden md:flex gap-4 lg:gap-6 text-sm">
+        <ul className="text-muted-foreground hidden gap-4 text-sm md:flex lg:gap-6">
           {headerData.links.map(({ href, label }) => {
             const sectionId = href.replace("#", "");
             const isActive = activeSection === sectionId;
@@ -89,7 +89,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-foreground hover:text-primary md:hidden p-2 transition-colors"
+            className="text-foreground hover:text-primary p-2 transition-colors md:hidden"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -99,8 +99,8 @@ export function Header() {
 
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur-xl">
-          <ul className="container mx-auto px-4 py-4 space-y-3">
+        <div className="border-border/60 bg-background absolute inset-x-0 top-full border-b shadow-lg md:hidden">
+          <ul className="container mx-auto space-y-3 px-4 py-4">
             {headerData.links.map(({ href, label }) => {
               const sectionId = href.replace("#", "");
               const isActive = activeSection === sectionId;
@@ -111,7 +111,7 @@ export function Header() {
                     href={href}
                     onClick={handleLinkClick}
                     className={cn(
-                      "block py-2 px-4 rounded-lg transition-colors",
+                      "block rounded-lg px-4 py-2 transition-colors",
                       isActive
                         ? "bg-primary/10 text-primary font-medium"
                         : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"

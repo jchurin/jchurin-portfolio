@@ -4,27 +4,30 @@ import { TimelineItem } from "./TimelineItem";
 import { PaginatedSlider } from "../common/PaginatedSlider";
 
 const ITEMS_PER_PAGE_DESKTOP = 4;
+const ITEMS_PER_PAGE_SHORT_DESKTOP = 3;
 const ITEMS_PER_PAGE_MOBILE = 2;
+
+/**
+ * Picks how many jobs fit on one page: two on phones, and on desktop four
+ * only when the screen is tall enough (short laptops like 1280x720 get three).
+ */
+function getItemsPerPage(): number {
+  if (window.innerWidth < 640) return ITEMS_PER_PAGE_MOBILE;
+  return window.innerHeight >= 750 ? ITEMS_PER_PAGE_DESKTOP : ITEMS_PER_PAGE_SHORT_DESKTOP;
+}
 
 export function Experience() {
   const { title, subtitle, jobs } = experienceData;
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [itemsPerPage, setItemsPerPage] = useState(ITEMS_PER_PAGE_DESKTOP);
 
   useEffect(() => {
-    /**
-     * Checks if viewport width is below mobile breakpoint (640px)
-     */
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
+    const updateItemsPerPage = () => setItemsPerPage(getItemsPerPage());
 
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
   }, []);
-
-  const itemsPerPage = isMobile ? ITEMS_PER_PAGE_MOBILE : ITEMS_PER_PAGE_DESKTOP;
 
   /**
    * Toggles the expanded/collapsed state of an experience card
@@ -37,13 +40,15 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="py-section flex min-h-screen snap-start flex-col justify-center"
+      className="py-section min-h-below-header flex snap-start flex-col justify-center"
     >
       <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
-        <h2 className="font-heading text-foreground mb-2 text-center text-2xl sm:text-3xl md:text-4xl font-normal">
+        <h2 className="font-heading text-foreground mb-2 text-center text-2xl font-normal sm:text-3xl md:text-4xl">
           {title}
         </h2>
-        <p className="text-muted-foreground mb-8 sm:mb-12 text-center text-sm sm:text-base">{subtitle}</p>
+        <p className="text-muted-foreground mb-8 text-center text-sm sm:mb-12 sm:text-base">
+          {subtitle}
+        </p>
 
         {/* Paginated Timeline */}
         <PaginatedSlider

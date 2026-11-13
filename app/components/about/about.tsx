@@ -8,7 +8,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="py-section relative flex min-h-screen snap-start flex-col justify-center overflow-hidden"
+      className="py-section min-h-below-header relative flex snap-start flex-col justify-center overflow-hidden"
     >
       {/* Subtle background decoration */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-30">
@@ -20,24 +20,25 @@ export function About() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-3xl px-4 sm:px-6">
-        <h2 className="font-heading text-foreground mb-6 sm:mb-8 text-2xl sm:text-3xl md:text-4xl font-normal text-center sm:text-left">
+      <div className="relative mx-auto w-full max-w-3xl px-4 sm:px-6">
+        <h2 className="font-heading text-foreground mb-4 text-center text-2xl font-normal sm:mb-8 sm:text-left sm:text-3xl md:text-4xl">
           {title}
         </h2>
 
-        <div className="text-muted-foreground mb-8 sm:mb-10 space-y-4 sm:space-y-6 leading-relaxed">
+        <div className="text-muted-foreground mb-6 space-y-3 leading-relaxed sm:mb-10 sm:space-y-6">
           {bio.map((paragraph, i) => (
-            <p key={i} className="text-base sm:text-lg">
+            <p key={i} className="short:text-sm text-[0.9375rem] sm:text-lg">
               {paragraph.replace("{years}", yearsOfExperience.toString())}
             </p>
           ))}
         </div>
 
-        <ul className="flex flex-wrap gap-2 sm:gap-3 justify-center sm:justify-start">
+        {/* Highlights: one swipeable row on short screens so the section still fits */}
+        <ul className="scrollbar-hide short:flex-nowrap short:overflow-x-auto short:justify-start short:-mx-4 short:px-4 flex flex-wrap justify-center gap-2 sm:justify-start sm:gap-3">
           {highlights.map((item, i) => (
             <li
               key={i}
-              className="border-border/60 from-primary/10 to-secondary/10 text-foreground hover:border-primary/40 hover:shadow-primary/10 inline-flex cursor-default items-center rounded-lg sm:rounded-xl border bg-linear-to-br px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-medium backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:shadow-md"
+              className="border-border/60 from-primary/10 to-secondary/10 text-foreground hover:border-primary/40 hover:shadow-primary/10 inline-flex shrink-0 cursor-default items-center rounded-lg border bg-linear-to-br px-3 py-2 text-xs font-medium whitespace-nowrap backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:shadow-md sm:rounded-xl sm:px-4 sm:py-2.5 sm:text-sm"
             >
               {item}
             </li>
